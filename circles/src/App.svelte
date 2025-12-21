@@ -10,12 +10,9 @@
 </script>
 
 <main>
-	<svg
-		width="1000"
-		height="500"
-	>
-		{#each data as { x, y, r, fill }}
-			<circle
+	<svg width="1000" height="500">
+		{#each data as { x, y , r, fill }}
+			<circle 
 				cx={x}
 				cy={y}
 				r={r}
@@ -27,7 +24,7 @@
 
 <style>
 	svg {
-		background: #f3fff0;
+		background-color: #f3ffF0;
 	}
 
 	circle {

@@ -1,11 +1,13 @@
 <script>
+
   export let x;
   export let y;
   export let r;
   export let fill;
+
 </script>
 
-<circle
+<circle 
 	cx={x}
 	cy={y}
 	r={r}

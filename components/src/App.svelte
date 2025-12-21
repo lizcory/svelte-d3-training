@@ -3,16 +3,15 @@
 
 	import Circle from './Circle.svelte';
 
-  let data = [];
+	let data = [];
 	setInterval(() => {
+		// array of length 1000, loop over each element of the array using map
 		data = Array.from({ length: 1000 }).map(() => {
 			return {
 				a: Math.random(),
 				b: Math.random(),
 				r: Math.random(),
-				fill: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-					Math.random() * 255
-				})`,
+				fill: `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`,
 			};
 		});
 	}, 2000);
@@ -20,6 +19,7 @@
 	let width = 1000;
 	let height = 500;
 
+	// make the scales responsive -- anytime the width or height updates, so do the scales
 	$: xScale = scaleLinear().domain([0, 1]).range([0, width]);
 
 	$: yScale = scaleLinear().domain([0, 1]).range([height, 0]);
@@ -29,6 +29,8 @@
 		.range([5, width / 100]);
 </script>
 
+<!-- this bind directive says hey let me grab whatever the client/device width and height are and
+ update the width and height variables and vice versa -->
 <main
 	bind:clientWidth={width}
 	bind:clientHeight={height}
@@ -55,6 +57,6 @@
 	}
 
 	svg {
-		background: #f3fff0;
+		background-color: #f3fff0;
 	}
 </style>
