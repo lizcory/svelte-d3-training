@@ -8,6 +8,7 @@
 	const drawFunctions = [];
 
 	let canvas;
+	// context (ctx) here is kind of like the "pen" we draw with on canvas
 	let ctx;
 	let pendingInvalidation = false;
 	let frameId;
@@ -60,12 +61,13 @@
 			frameId = requestAnimationFrame(update);
 		},
 	});
-
+	// runes here are svelte syntax meaning "run this line of code whenever something within the line changes"
 	$: if (canvas && ctx) scaleCanvas(canvas, ctx, width, height);
 </script>
 
 <canvas bind:this={canvas} />
-<slot />
+<!-- slot here indicates our canvas component can take children -->
+<slot /> 
 
 <style>
 </style>
