@@ -58,7 +58,7 @@
 		height: 100vh;
 	}
 
-	svg {
+	/* svg {
 		background-color: #f3fff0;
-	}
+	} */
 </style>
